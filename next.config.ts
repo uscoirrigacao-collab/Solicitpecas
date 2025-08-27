@@ -31,8 +31,6 @@ const pwaConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
 });
 
-// Don't use PWA in dev mode
-export default process.env.NODE_ENV === "development" ? nextConfig : pwaConfig(nextConfig);
+export default pwaConfig(nextConfig);
